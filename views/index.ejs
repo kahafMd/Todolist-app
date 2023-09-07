@@ -1,0 +1,48 @@
+<%- include("header.ejs") %>
+
+<div class="links">
+    <a href="/" class="active">Today</a>
+    <a href="/work" >Work</a>
+</div>
+
+    <div class="container">
+        <h1>Todolist Application</h1>
+
+        <form action="/" method="post">
+            <input type="text" name="todayEntry">
+            <button type="submit">+</button>
+        </form>
+
+
+
+        <% if (locals.todayItems) { %>
+            <h2>List :</h2> <br>
+            <div class="content">
+
+                <% for ( i=0; i < todayItems.length; i++) { %>
+                    <input type="checkbox" name="checked" id="checked">
+                    <label for="" class="strikethrough">
+                        <%= todayItems[i]%> <br>
+                    </label>
+                    
+                    <% } %>
+                </div>
+
+                    <% } else { %>
+                        <h2>List :</h2>
+                        <div class="content">
+                            <% for ( i=0; i < listToday.length; i++) { %>
+
+                                <input type="checkbox" name="checked" id="checked">
+
+                                <label for="" class="strikethrough">
+                                    <%= listToday[i]%> <br>
+                                </label>
+
+
+                                <% } %>
+                        </div>
+                        <% } %>
+
+
+    </div>
